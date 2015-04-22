@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Reminder HTML5</title>
+    <meta name="viewport" content="width=640,height=960, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../jquery.mobile-1.4.5query.mobile-1.4.5.css"/>
+    <link rel="stylesheet" type="text/css" href="../pluginsimpledialog2.css">
+    <link rel="stylesheet" type="text/css" href="../pluginsatepicker.css"/>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script type="text/javascript" src="../jquery-1.11.2query-1.11.2.js"></script>
+    <script type="text/javascript" src="../jquery.mobile-1.4.5query.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="../pluginsimpledialog2.js"></script>
+    <script type="text/javascript" src="../pluginsatepicker.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+<!--HOME PAGE-->
+    <div data-role="page" id="page-home" data-fullscreen="true">
+        <div data-role="header"><h1>Reminder</h1></div>
+
+        <div data-role="content" id="event-content">
+            <center>
+                <div id="display_events">
+                    <ul id="eventList" data-role="listview" data-inset="true">
+                        <li>Today's Events
+                    </ul>
+                </div>
+
+                <!--TODO Implement-->
+                <!--<a href="#" id="other_events_btn" data-role="button" data-mini="true">Check Other Events</a><br>-->
+                <a href="#" id="create_new_btn" data-role="button" data-mini="true">Create New Event</a>
+            </center>
+        </div>
+
+        <div data-role="footer"><h5>2015</h5></div>
+    </div>
+
+
+<!--CREATE EVENT PAGE-->
+    <div data-role="page" data-fullscreen="true" id="page-new-event" data-add-back-btn="true">
+        <div data-role="header"><a href="#" data-icon="home" class="ui-btn-left home_btn">Home</a><h1>Reminder</h1></div>
+
+        <div data-role="content" id="event-content">
+
+            <div id="mydate_div">
+                <label for="mydate2">Select Date</label>
+                <input name="mydate2" id="mydate2" type="text" data-role="datebox"
+                       data-options='{"mode": "flipbox", "disableManualInput": true, "overrideHeaderFormat":"%Y-%m-%d", "fieldsOrderOverride":["y","m","d"]}'>
+            </div>
+            <br>
+
+            <div id="mytime_div">
+                <label for="mydate3">Select Time</label>
+                <input name="mydate3" id="mydate3" type="text" data-role="datebox"
+                       data-options='{"mode": "timeflipbox", "disableManualInput": true, "dateFormat":"%k:%M", "timeFormat":"24", "fieldsOrderOverride":["h","i"], "timeOutput": "%k:%M"}'>
+            </div>
+            <br>
+
+            <div id="title_div">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text"/>
+            </div>
+            <br>
+
+            <div id="desc_div">
+                <label for="desc">Description:</label>
+                <textarea cols="40" rows="15" id="desc" name="desc"></textarea>
+            </div>
+
+            <div id="repeat_div">
+                <label for="desc">Repeat</label>
+                <input name="repeat" id="repeat" type="text" data-role="datebox"
+                       data-options='{"mode": "timeflipbox", "disableManualInput": true, "dateFormat":"%k:%M", "timeFormat":"24", "fieldsOrderOverride":["h","i"], "timeOutput": "%k:%M"}'>
+            </div>
+
+            <a href="#" id="save_btn" data-role="button" data-icon="check">Save</a>
+            <br>
+
+        </div>
+
+        <div data-role="footer"><h5>2015</h5></div>
+    </div>
+
+
+<!--OTHER PAGE-->
+    <div data-role="page" id="page-other" data-fullscreen="true" data-add-back-btn="true">
+        <div data-role="header"><a href="#" data-icon="home" class="ui-btn-left home_btn">Home</a><h1>Reminder</h1></div>
+
+        <div data-role="content" id="other-event-content">
+            <div id="other_events_list">
+                <ul id="otherEventList" data-role="listview" data-inset="true"></ul>
+            </div>
+        </div>
+
+        <div data-role="footer"><h5>2015</h5></div>
+    </div>
+</body>
+</html>
